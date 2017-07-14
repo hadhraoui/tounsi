@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Tounsi s7i7
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!--ion-list>
+    <ion-item>
+      <ion-input placeholder="nom"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="prenom"></ion-input>
+    </ion-item>
+    <ion-item>
+      <button ion-button full>submit</button>
+    </ion-item>
+    [formGroup]="identificationForm"
+  </ion-list-->
+  <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+    <ion-input placeholder="nom" [(ngModel)]="user.lastname" required name="firstname"></ion-input>
+    <ion-input placeholder="prenom" [(ngModel)]="user.firstname" required name="lastname"></ion-input>
+    <button type="submit" ion-button full [disabled]="!userForm.form.valid">submit</button>
+  </form>
+</ion-content>
